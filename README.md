@@ -1,5 +1,7 @@
+# Source code for CSCI 476 @ MSU - Computer Security 
 
-# Source Code in the Books
+Includes some code examples from class. 
 
-## Computer Security: A Hands-on Approach, Second Edition
-## Internet Security: A Hands-on Approach, Second Edition
+Mostly adopted from **"Computer & Internet Security: A Hands-on Approach" (2nd Edition)** by Wenliang (Kevin) Du.
+
+[https://www.handsonsecurity.net](https://www.handsonsecurity.net)
