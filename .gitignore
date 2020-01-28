@@ -1,4 +1,9 @@
-*
-!*.c
-!README.md
-!Makefile
+# *
+# !*.c
+# !**/README*
+# !Makefile
+
+# executables...
+cap_leak
+catall
+safecatall
