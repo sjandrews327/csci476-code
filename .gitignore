@@ -3,7 +3,11 @@
 # !**/README*
 # !Makefile
 
+*.o
+
 # executables...
+probe
 cap_leak
 catall
 safecatall
+vul
