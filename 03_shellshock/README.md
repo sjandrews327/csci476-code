@@ -76,6 +76,26 @@ echo
 echo "Hello World"
 ```
 
+##### Pro Tip
+
+Fetching code from the course repo...
+
+```bash
+# Use wget to get a file from our course repo
+sudo wget -O myenv.cgi https://raw.githubusercontent.com/traviswpeters/csci476-code/master/03_shellshock/env.cgi
+cat myenv.cgi
+```
+
+...and putting it in the default folder for the Apache webserver.
+
+```bash
+# copy to the default folder for the Apache webserver
+sudo mv myenv.cgi /usr/lib/cgi-bin/ 
+ls -al /usr/lib/cgi-bin/
+```
+
+### Using `curl`
+
 Use `curl` to interact with the CGI script
 
 ```bash
