@@ -81,17 +81,11 @@ echo "Hello World"
 Fetching code from the course repo...
 
 ```bash
-# Use wget to get a file from our course repo
-sudo wget -O myenv.cgi https://raw.githubusercontent.com/traviswpeters/csci476-code/master/03_shellshock/env.cgi
-cat myenv.cgi
-```
-
-...and putting it in the default folder for the Apache webserver.
-
-```bash
-# copy to the default folder for the Apache webserver
-sudo mv myenv.cgi /usr/lib/cgi-bin/ 
-ls -al /usr/lib/cgi-bin/
+# Use wget to get a file from our course repo & save to the default folder for the Apache webserver
+sudo wget -O /usr/lib/cgi-bin/myenv.cgi https://raw.githubusercontent.com/traviswpeters/csci476-code/master/03_shellshock/env.cgi
+sudo chmod 755 /usr/lib/cgi-bin/myenv.cgi
+ls -al /usr/lib/cgi-bin/ # verify permissions
+cat /usr/lib/cgi-bin/myenv.cgi # verify file content
 ```
 
 ### Using `curl`
