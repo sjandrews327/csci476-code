@@ -63,6 +63,32 @@ sudo ln -sf /bin/dash /bin/sh # reset sh
 
 ## Shellshock Attacks on CGI Programs
 
+### Pro Tip
+
+You will likely need code/CGI scripts from the course code repo. 
+You can easily fetch code from the website using `wget`. 
+
+```bash
+# Use wget to get a file from our course repo & save to the default folder for the Apache webserver
+sudo wget -O /usr/lib/cgi-bin/myenv.cgi https://raw.githubusercontent.com/traviswpeters/csci476-code/master/03_shellshock/env.cgi
+sudo chmod 755 /usr/lib/cgi-bin/myenv.cgi # make it executable
+ls -al /usr/lib/cgi-bin/ # verify permissions
+cat /usr/lib/cgi-bin/myenv.cgi # verify file content
+```
+
+##### Common Gotchas
+
+A couple of issues that have come up regarding students trying to invoke CGI scripts:
+
+0. You aren't using the official SEED VM (you should be!) ;-)
+1. File not in `/usr/lib/cgi-bin/`
+2. Request made to a file that does not exist in `/usr/lib/cgi-bin/`
+3. File is not executable
+4. File is empty
+5. If all else fails, try rebooting your VM.
+   Mucking around with your VM in the previous lab(s) may have broken something.
+
+
 ### Setup
 
 Put this script (`test.cgi`) in `/usr/bin/cgi-bin/`
@@ -74,18 +100,6 @@ echo "Content-type: text/plain"
 echo 
 echo 
 echo "Hello World"
-```
-
-##### Pro Tip
-
-Fetching code from the course repo...
-
-```bash
-# Use wget to get a file from our course repo & save to the default folder for the Apache webserver
-sudo wget -O /usr/lib/cgi-bin/myenv.cgi https://raw.githubusercontent.com/traviswpeters/csci476-code/master/03_shellshock/env.cgi
-sudo chmod 755 /usr/lib/cgi-bin/myenv.cgi
-ls -al /usr/lib/cgi-bin/ # verify permissions
-cat /usr/lib/cgi-bin/myenv.cgi # verify file content
 ```
 
 ### Using `curl`
