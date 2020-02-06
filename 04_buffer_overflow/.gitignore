@@ -5,3 +5,4 @@ badfile
 peda-session-stack_gdb.txt
 peda-session-stack.txt
 stack_layout2
+aslr_test
