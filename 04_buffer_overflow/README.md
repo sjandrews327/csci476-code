@@ -112,3 +112,12 @@ Create a reversed, hex-encoded version of the shell string (this will can be pus
 # reversed + hex encoded
 '//bin/sh'[::-1].encode('hex')
 ```
+
+**Experimenting with ASLR settings:**
+
+```bash
+gcc aslr_test.c -o aslr_test
+sudo sysctl -w kernel.randomize_va_space=0; ./aslr_test
+sudo sysctl -w kernel.randomize_va_space=1; ./aslr_test
+sudo sysctl -w kernel.randomize_va_space=2; ./aslr_test
+```
