@@ -76,6 +76,14 @@ In short, this file generates a bad file that...
 
 ## Other Odds and Ends
 
+**In a shell and want to know WHAT shell you are running?**
+
+```bash
+ls -l /proc/$$/exe
+lrwxrwxrwx 1 root root 0 Feb  6 11:34 /proc/9516/exe -> /bin/dash
+# NOTE: you'll need to use `sudo` if you aren't root ;)
+```
+
 **Generate intermediate files (including assembly)**
 
 ```bash
