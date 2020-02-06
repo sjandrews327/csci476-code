@@ -1,0 +1,6 @@
+stack
+stack_gdb
+badfile
+.gdb_history
+peda-session-stack_gdb.txt
+peda-session-stack.txt
