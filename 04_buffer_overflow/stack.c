@@ -35,6 +35,7 @@ int main(int argc, char **argv)
         badfile = fopen("badfile", "r");
         fread(str, sizeof(char), 517, badfile);
         bof(str);
+
         printf("Returned Properly\n");
         return 1;
 }
