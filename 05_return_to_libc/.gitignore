@@ -1,5 +1,7 @@
 envaddr_gdb
 envaddrlongername
+func_prologue_epilogue.s
+stack
 
 .gdb_history
 peda-session-*
