@@ -13,7 +13,7 @@ int foo(char *str)
     /* print out information for experiment purpose */
     printf("Address of buffer[]:  0x%.8x\n", (unsigned)buffer);
     printf("Frame Pointer value:  0x%.8x\n", (unsigned)framep);
-
+    printf("Diff between buffer & frame pointer = %d\n", ((unsigned)framep - (unsigned)buffer)); 
     /* The following statement has a buffer overflow problem */
     strcpy(buffer, str);
 

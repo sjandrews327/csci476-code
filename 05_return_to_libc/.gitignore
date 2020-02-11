@@ -5,3 +5,7 @@ stack
 
 .gdb_history
 peda-session-*
+badfile
+shellcode
+stack_rop
+stack_rop.s
