@@ -14,6 +14,12 @@ Mostly adopted from **"Computer & Internet Security: A Hands-on Approach" (2nd E
 echo 'set disassembly-flavor att' >> ~/.gdbinit
 ```
 
+### Disable ASLR
+
+```bash
+sudo sysctl -w kernel.randomize_va_space=0;
+```
+
 ### Updating the Shell
 
 On the SEED VM, `/bin/sh` is actually an alias for `/bin/dash`.
