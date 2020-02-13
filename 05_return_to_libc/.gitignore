@@ -12,3 +12,4 @@ stack_rop.s
 envad
 myenv
 envaddr
+stack_gdb
