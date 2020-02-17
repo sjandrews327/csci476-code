@@ -124,7 +124,7 @@ stack_rop
 
 
 
-**Example 1 --- Returning to Function (WITHOUT Args)**
+## Example 1 --- Returning to Function (WITHOUT Args)
 
 > _**Observation 5.1:**_
 > _Assume a function A()'s return address field contains the address of the entry point of function B(),_
@@ -162,7 +162,7 @@ chain_noarg.py && stack_rop
 
 
 
-**Example 2 --- Returning to Function (WITH Args)**
+## Example 2 --- Returning to Function (WITH Args)
 
 > _**Observation 5.2:**_
 > _Assume a function A()'s return address field contains the address of the code that is right after B()'s function prologue;_  
@@ -215,7 +215,7 @@ chain_witharg.py && stack_rop
 
 
 
-**Example 3 --- Chaining DLL Function Calls (e.g., `printf`)**
+## Example 3 --- Chaining DLL Function Calls (e.g., `printf`)
 
 **key takeaway 1:**
 Because of how the addresses for library functions are resolved (re: Procedure Linkage Table - PLT),
@@ -266,7 +266,7 @@ chain_printf.py && stack_rop
 
 
 
-**Example 4 --- The Final Attack**
+## Example 4 --- The Final Attack
 
 Now we can chain arbitrary number of functions, with an arbitrary number of arguments.
 We can return to the task of chaining these functions:
