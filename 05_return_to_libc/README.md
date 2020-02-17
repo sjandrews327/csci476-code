@@ -122,6 +122,8 @@ stack_rop
 # Returned Properly
 ```
 
+**NOTE: Be sure to use the ebp (frame pointer) value that is printed out by running `./stack_rop` directly.**
+**If you use a value for ebp that you obtain from gdb, it will not be correct!**
 
 
 ## Example 1 --- Returning to Function (WITHOUT Args)
