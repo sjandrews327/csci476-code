@@ -108,7 +108,7 @@ libc_exploit.py
 sudo sysctl -w kernel.randomize_va_space=0
 sudo ln -sf /bin/zsh /bin/sh
 export MYSHELL="/bin/sh"
-touch badfile
+rm -f badfile && touch badfile
 ```
 ```bash
 gcc -fno-stack-protector -z noexecstack -o stack_rop stack_rop.c
