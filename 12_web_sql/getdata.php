@@ -1,3 +1,4 @@
+/* getdata.php */
 <?php
    function getDB() {
      $dbhost="localhost";

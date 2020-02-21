@@ -1,3 +1,4 @@
+/* getdata_encoding.php */
 <?php
    $conn = new mysqli("localhost", "root", "seedubuntu", "dbtest");
    $eid = $mysqli->real_escape_string($_GET['EID']);         

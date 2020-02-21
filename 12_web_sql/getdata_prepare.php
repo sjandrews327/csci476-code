@@ -1,3 +1,4 @@
+/* getdata_prepare.php */
 <?php
    $conn = new mysqli("localhost", "root", "seedubuntu", "dbtest");
    $sql = "SELECT Name, Salary, SSN
@@ -12,3 +13,4 @@
       }
    }
 ?>
+
