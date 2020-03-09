@@ -38,3 +38,14 @@ Here are examples of how to set/reset the shell symlinks:
 $ sudo ln -sf /bin/zsh /bin/sh   # make sh symlink to zsh
 $ sudo ln -sf /bin/dash /bin/sh  # sh is symlink to dash (default)
 ```
+
+### Updating the Hostname
+
+Sometimes for clarity it is nice to change the hostname.
+For example, I will often set the hostname to a descriptive name (e.g., attacker, user, server)
+in demos to clarify the role of a particular VM.
+Here is a simple way to achieve this:
+
+```bash
+sudo hostnamectl set-hostname NEW_NAME_YOU_WANT
+```
