@@ -14,7 +14,7 @@ int main()
   struct sockaddr_in dest;
   memset(&dest, 0, sizeof(struct sockaddr_in));
   dest.sin_family = AF_INET;
-  dest.sin_addr.s_addr = inet_addr("10.0.2.69");
+  dest.sin_addr.s_addr = inet_addr("10.0.2.15");
   dest.sin_port = htons(9090);
 
   // Step 3: Connect to the server
@@ -25,7 +25,6 @@ int main()
   char *buffer1 = "Hello Server!\n";
   char *buffer2 = "Hello Again!\n";
   write(sockfd, buffer1, strlen(buffer1));
-
   write(sockfd, buffer2, strlen(buffer2));
 
   // Step 5: Close the connection
