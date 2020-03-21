@@ -1,6 +1,6 @@
 # Secret-Key Encryption
 
-Notes and demos below. 
+Notes and demos below.
 
 ### Padding
 
@@ -92,5 +92,3 @@ $ xxd -c 32 -p c1
 $ xxd -c 32 -p c2
 7380ee1c0f9eb7dae28c1ba6a1a74310114288f771139da8ec99dfb0036e38ce
 ```
-
-### PyCrypto APIs
