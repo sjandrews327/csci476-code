@@ -20,7 +20,6 @@ h = SHA256.new(message)
 signer = DSS.new(key, 'fips-186-3')
 signature = signer.sign(h)
 
-
 # ECDSA signature verification
 key = ECC.import_key(open('public_ecc.pem').read())
 h = SHA256.new(message)
