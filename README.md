@@ -2,23 +2,10 @@
 
 Includes code examples from class.
 
-Mostly adopted from **"Computer & Internet Security: A Hands-on Approach" (2nd Edition)** by Wenliang (Kevin) Du.
-
-[https://www.handsonsecurity.net](https://www.handsonsecurity.net)
+Many of our examples are adapted from **SEED Labs**
+[[1](https://github.com/seed-labs/seed-labs), [2](https://www.handsonsecurity.net)].
 
 # Tips & Tricks
-
-### Configure `gdb` to ensure it uses att syntax
-```bash
-# make sure default assembly syntax is att syntax. ONLY NEED TO RUN THIS ONCE!
-echo 'set disassembly-flavor att' >> ~/.gdbinit
-```
-
-### Disable ASLR
-
-```bash
-sudo sysctl -w kernel.randomize_va_space=0;
-```
 
 ### Updating the Shell
 
@@ -49,3 +36,20 @@ Here is a simple way to achieve this:
 ```bash
 sudo hostnamectl set-hostname NEW_NAME_YOU_WANT
 ```
+
+### Configure `gdb` to use Intel / AT&T syntax for Dissasembled Code
+
+```bash
+$ show disassembly-flavor
+```
+
+I think the Intel syntax is cleaner, but use whichever syntax is best for you: 
+
+```bash
+# make sure default assembly syntax is att syntax. ONLY NEED TO RUN THIS ONCE!
+$ echo 'set disassembly-flavor intel' >> ~/.gdbinit
+# or
+$ echo 'set disassembly-flavor att' >> ~/.gdbinit
+```
+
+Ref: [https://visualgdb.com/gdbreference/commands/set_disassembly-flavor](https://visualgdb.com/gdbreference/commands/set_disassembly-flavor)
