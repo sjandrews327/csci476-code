@@ -6,8 +6,6 @@
 *.o
 
 # executables...
-probe
-probe-old
 cap_leak
 catall
 safecatall

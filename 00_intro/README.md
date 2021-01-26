@@ -1,24 +1,30 @@
-## Some Basics...
+## Examples
+
+See the subdirectories here for a few helpful intro examples:
+- `makefiles/` - simple and advanced example of Makefiles
+- `pba/` - simple code that helps you explore the compilation process
+- `probe` - simple code to explore the address space of a running process
+
+## Some Command Line Basics
 
 ```bash
 cd
 ls
 pwd
 mkdir
-touch 
+touch
 mv
 vim FILENAME
 env
 echo ($?, $$, $PATH)
-make 
+make
 gcc
 ```
 
 ## File Ops, Users, and Groups
 
-- https://linuxacademy.com/guide/12659-understanding-linux-users-and-groups/
-- https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html
-- https://devconnected.com/linux-file-permissions-complete-guide/ 
+- [Linux File Permissions Complete Guide](https://devconnected.com/linux-file-permissions-complete-guide/)
+- [What is Umask and How To Setup Default umask Under Linux?](https://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html)
 
 ```bash
 # a basic example with files, permissions, and identity
@@ -56,7 +62,7 @@ groupadd
 (groupmod)
 groupdel
 
-# misc 
+# misc
 sudo chgroup root myid
 cat /etc/passwd
 umask # setting default permissions for creating new files/directories
