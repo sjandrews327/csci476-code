@@ -1,4 +1,4 @@
-# Source code for CSCI 476/594 @ MSU - Computer Security
+# Code & Examples Computer Security @ MSU
 
 Includes code examples from class.
 
@@ -43,7 +43,7 @@ sudo hostnamectl set-hostname NEW_NAME_YOU_WANT
 $ show disassembly-flavor
 ```
 
-I think the Intel syntax is cleaner, but use whichever syntax is best for you: 
+I think the Intel syntax is cleaner, but use whichever syntax is best for you:
 
 ```bash
 # make sure default assembly syntax is att syntax. ONLY NEED TO RUN THIS ONCE!
