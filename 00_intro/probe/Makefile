@@ -1,5 +1,5 @@
 # CFLAGS: Extra flags to give to the C compiler
-CFLAGS   += -Wall -O2 -g #-Werror 
+CFLAGS   += -g #-O2 -Wall -Werror 
 SRC       = $(wildcard *.c)
 OBJ       = $(SRC:.c=.o)
 EXE       = $(subst .c,,$(SRC))
