@@ -1,20 +1,29 @@
-/* catall.c */
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 
 int main(int argc, char *argv[])
 {
-  char *cat="/bin/cat";
+    char *v[3];
 
-  if(argc < 2) {
-    printf("Please type a file name.\n");
-    return 1;
-  }
+    if (argc < 2) {
+        printf("Audit! Please type a file name.\n");
+        return 1;
+    }
 
-  char *command = malloc(strlen(cat) + strlen(argv[1]) + 2);
-  sprintf(command, "%s %s", cat, argv[1]);
-  system(command);
-  return 0 ;
+    v[0] = "/bin/cat"; v[1] = argv[1]; v[2] = 0;
+    char *command = malloc(strlen(v[0]) + strlen(v[1]) + 2);
+    sprintf(command, "%s %s", v[0], v[1]);
+
+    /*
+     * Use only one of the following:
+     */
+
+    // Task 8.1
+    system(command);
+
+    // Task 8.2
+    // execve(v[0], v, 0);
+
+    return 0;
 }
-

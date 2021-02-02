@@ -5,10 +5,4 @@
 
 *.o
 
-# executables...
-cap_leak
-catall
-safecatall
-vul
-
 .idea/
