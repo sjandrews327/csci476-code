@@ -1,0 +1,12 @@
+a.out
+cap_leak
+catall
+safecatall
+myprintenv
+myenv_execve
+myenv_system
+myenv_envp
+myenv_environ
+ls_vuln
+sleep_prog
+cal
