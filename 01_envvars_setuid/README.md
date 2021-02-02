@@ -117,3 +117,11 @@ sudo chown seed mycat
 chmod 4755 mycat
 ./mycat /etc/shadow
 ```
+
+## Find all Set-UID programs!
+
+```bash
+$ find / -xdev \( -perm -4000 \) -type f -print0 2>/dev/null | xargs -0 ls -l
+```
+
+(Thanks, https://www.cyberciti.biz/faq/unix-bsd-linux-setuid-file/)
