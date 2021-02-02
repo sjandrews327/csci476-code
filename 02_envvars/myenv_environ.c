@@ -1,7 +1,7 @@
 // Print environment variables using environ.
 //
 // Compile:
-//  $ gcc env2.c -o env2
+//  $ gcc myenv_environ.c -o myenv_environ
 
 #include <stdio.h>
 

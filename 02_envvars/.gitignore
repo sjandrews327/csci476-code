@@ -1,5 +1,5 @@
 myprintenv
 myenv_execve
 myenv_system
-env1
-env2
+myenv_envp
+myenv_environ

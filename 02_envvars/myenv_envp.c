@@ -1,7 +1,7 @@
 // Print environment variables using envp.
 //
 // Compile:
-//  $ gcc env1.c -o env1
+//  $ gcc myenv_envp.c -o myenv_envp
 
 #include <stdio.h>
 
