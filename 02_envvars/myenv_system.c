@@ -1,5 +1,5 @@
 // Compile:
-//  $ gcc myenv2.c -o myenv2
+//  $ gcc myenv_system.c -o myenv_system
 
 #include <unistd.h>
 #include <stdio.h>
