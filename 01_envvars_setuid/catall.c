@@ -16,13 +16,10 @@ int main(int argc, char *argv[])
     sprintf(command, "%s %s", v[0], v[1]);
 
     /*
-     * Use only one of the following:
+     * Use only one of the following (comment out the other):
      */
 
-    // Task 8.1
     system(command);
-
-    // Task 8.2
     // execve(v[0], v, 0);
 
     return 0;
