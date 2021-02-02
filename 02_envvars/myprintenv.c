@@ -1,3 +1,8 @@
+// Compile:
+//  $ gcc myprintenv.c -o myprintenv
+// Run the program and redirect output to a text file:
+//  $ myprintenv > file
+
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,10 +23,10 @@ void main()
   pid_t childPid;
   switch(childPid = fork()) {
     case 0:  /* child process */
-      printenv();          
+      printenv();
       exit(0);
     default:  /* parent process */
-      // printenv();       
+      // printenv();
       exit(0);
   }
 }
