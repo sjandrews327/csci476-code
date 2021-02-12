@@ -1,6 +1,7 @@
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 int main(int argc, char *argv[])
 {
@@ -19,8 +20,8 @@ int main(int argc, char *argv[])
      * Use only one of the following (comment out the other):
      */
 
-    system(command);
-    // execve(v[0], v, 0);
+    //system(command);
+    execve(v[0], v, 0);
 
     return 0;
 }
