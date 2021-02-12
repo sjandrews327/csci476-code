@@ -1,5 +1,6 @@
 # CFLAGS: Extra flags to give to the C compiler
-CFLAGS   += -Wall -O2 -g #-Werror 
+CC        = gcc
+CFLAGS   += -Wall -O2 -g #-Werror
 SRC       = $(wildcard *.c)
 OBJ       = $(SRC:.c=.o)
 EXE       = $(subst .c,,$(SRC))
@@ -9,4 +10,5 @@ EXE       = $(subst .c,,$(SRC))
 all: $(OBJ) $(EXE)
 
 clean:
-	rm -rf *.o *.so *.a *.la $(EXE)
+	@rm -f *.o *.i *.s *.so *.a *.la *~ $(EXE)
+	@rm -rf *.dSYM/ # oops - compiled on mac! :)
