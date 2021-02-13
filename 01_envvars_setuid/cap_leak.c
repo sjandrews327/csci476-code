@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <fcntl.h>
 
-void main()
+int main()
 {
     int fd;
 

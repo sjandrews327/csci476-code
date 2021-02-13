@@ -19,7 +19,7 @@ void printenv()
     }
 }
 
-void main()
+int main()
 {
     pid_t childPid;
     switch(childPid = fork()) {

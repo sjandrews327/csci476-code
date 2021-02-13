@@ -2,10 +2,10 @@
 #include <unistd.h>
 
 extern char ** environ;
-void main(int argc, char* argv[], char* envp[])
+int main(int argc, char* argv[], char* envp[])
 {
-    int i = 0; char* v[2]; char* newenv[3];
-    if (argc < 2) return;
+    char* v[2]; char* newenv[3];
+    if (argc < 2) return -1;
 
     // Construct the argument array
     v[0] = "/usr/bin/env";   v[1] = NULL;
