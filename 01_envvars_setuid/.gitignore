@@ -11,3 +11,7 @@ myenv_environ
 ls_vuln
 sleep_prog
 cal
+hello
+libmylib.so.1.0.1
+myenv_pwd
+passenv
