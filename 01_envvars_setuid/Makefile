@@ -44,7 +44,7 @@ myprintenv: myprintenv.c
 passenv: passenv.c
 	-$(CC) $(CFLAGS) -o $@ $^
 
-sleep: mylib.c
+mylibc: mylib.c
 	gcc -fPIC -g -c mylib.c
 	gcc -shared -o libmylib.so.1.0.1 mylib.o -lc
 
@@ -52,5 +52,5 @@ sleep_prog: sleep_prog.c
 	-$(CC) $(CFLAGS) -o $@ $^
 
 clean:
-	@rm -f *.o *.i *.s *.so *.a *.la *~ $(EXECS)
+	@rm -f *.o *.i *.s *.so.* *.a *.la *~ $(EXECS)
 	@rm -rf *.dSYM/ # oops - compiled on mac! :)
