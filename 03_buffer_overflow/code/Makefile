@@ -6,7 +6,7 @@ L1 = 100
 L2 = 160
 L3 = 200
 L4 = 10
- 
+
 all: $(TARGET)
 
 stack-L1: stack.c
@@ -29,7 +29,5 @@ stack-L4: stack.c
 	gcc -DBUF_SIZE=$(L4) $(FLAGS) -g -o $@-dbg stack.c
 	sudo chown root $@ && sudo chmod 4755 $@
 
-
 clean:
 	rm -f badfile $(TARGET) peda-session-stack*.txt .gdb_history
-

@@ -11,4 +11,3 @@ setuid:
 
 clean:
 	rm -f a32.out a64.out *.o
-
