@@ -3,10 +3,11 @@
 # !**/README*
 # !Makefile
 
+a.out
 *.o
 
 .idea/
 
 #
 .gdb_history
-peda-session-
+peda-session-*
