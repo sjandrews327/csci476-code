@@ -6,3 +6,7 @@
 *.o
 
 .idea/
+
+#
+.gdb_history
+peda-session-
