@@ -1,6 +1,5 @@
 #!/bin/bash_shellshock
 
-echo "Content-type: text/plain"
-echo
+echo "Content-Type: text/plain"
 echo
 echo "Hello World"
