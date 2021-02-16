@@ -8,7 +8,6 @@ while true; do
     duration=$SECONDS
     min=$(($duration / 60))
     sec=$(($duration % 60))
-    echo "$min minutes and $sec seconds elapsed."
-    echo "The program has been running $value times so far."
+    echo "The program has been run $value times so far (time elapsed: $min minutes and $sec seconds)."
     ./stack-L1
 done
