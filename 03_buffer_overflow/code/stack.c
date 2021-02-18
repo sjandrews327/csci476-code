@@ -17,7 +17,7 @@ int bof(char *str)
 {
     char buffer[BUF_SIZE];
 
-    // The following statement has a buffer overflow problem
+    // potential buffer overflow!
     strcpy(buffer, str);
 
     return 1;
