@@ -1,10 +1,10 @@
 <!--
-SEED Lab: SQL Injection Education Web plateform
+SEED Lab: SQL Injection Education Web platform
 Author: Kailiang Ying
 Email: kying@syr.edu
 -->
 <!--
-SEED Lab: SQL Injection Education Web plateform
+SEED Lab: SQL Injection Education Web platform
 Enhancement Version 1.
 Date: 10th April 2018.
 Developer: Kuber Kohli.
@@ -21,7 +21,7 @@ Update: The password was stored in the session was updated when password is chan
   $input_email = $_GET['Email'];
   $input_nickname = $_GET['NickName'];
   $input_address= $_GET['Address'];
-  $input_pwd = $_GET['Password'];
+  $input_pwd = $_GET['password'];
   $input_phonenumber = $_GET['PhoneNumber'];
   $uname = $_SESSION['name'];
   $eid = $_SESSION['eid'];
@@ -49,7 +49,7 @@ Update: The password was stored in the session was updated when password is chan
     $hashed_pwd = sha1($input_pwd);
     //Update the password stored in the session.
     $_SESSION['pwd']=$hashed_pwd;
-    $sql = $conn->prepare("UPDATE credential SET nickname= ?,email= ?,address= ?,Password= ?,PhoneNumber= ? where ID=$id;");
+    $sql = $conn->prepare("UPDATE credential SET nickname= ?,email= ?,address= ?,password= ?,PhoneNumber= ? where ID=$id;");
     $sql->bind_param("sssss",$input_nickname,$input_email,$input_address,$hashed_pwd,$input_phonenumber);
     $sql->execute();
     $sql->close();

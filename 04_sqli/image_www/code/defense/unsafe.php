@@ -15,7 +15,7 @@ function getDB() {
 }
 
 $input_uname = $_GET['username'];
-$input_pwd = $_GET['Password'];
+$input_pwd = $_GET['password'];
 $hashed_pwd = sha1($input_pwd);
 
 // create a connection
@@ -24,7 +24,7 @@ $conn = getDB();
 // do the query
 $result = $conn->query("SELECT id, name, eid, salary, ssn
                         FROM credential
-                        WHERE name= '$input_uname' and Password= '$hashed_pwd'");
+                        WHERE name= '$input_uname' and password= '$hashed_pwd'");
 if ($result->num_rows > 0) {
   // only take the first row 
   $firstrow = $result->fetch_assoc();

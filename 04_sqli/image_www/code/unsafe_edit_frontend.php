@@ -64,7 +64,7 @@ Update: Implemented Form class from bootstrap to get a nice UI for edit profile 
   // create a connection
   $conn = getDB();
   // Sql query to authenticate the user
-  $sql = "SELECT id, name, eid, salary, birth, ssn, phoneNumber, address, email,nickname,Password
+  $sql = "SELECT id, name, eid, salary, birth, ssn, phoneNumber, address, email, nickname, password
   FROM credential
   WHERE name= '$uname'";
   if (!$result = $conn->query($sql)) {
@@ -84,7 +84,7 @@ Update: Implemented Form class from bootstrap to get a nice UI for edit profile 
   $phoneNumber = $json_a[0]['phoneNumber'];
   $address = $json_a[0]['address'];
   $email = $json_a[0]['email'];
-  $pwd = $json_a[0]['Password'];
+  $pwd = $json_a[0]['password'];
   $nickname = $json_a[0]['nickname'];
   ?>
 

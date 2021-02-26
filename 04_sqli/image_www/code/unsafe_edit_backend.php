@@ -21,7 +21,7 @@ Update: The password was stored in the session was updated when password is chan
   $input_email = $_GET['Email'];
   $input_nickname = $_GET['NickName'];
   $input_address= $_GET['Address'];
-  $input_pwd = $_GET['Password'];
+  $input_pwd = $_GET['password'];
   $input_phonenumber = $_GET['PhoneNumber'];
   $uname = $_SESSION['name'];
   $eid = $_SESSION['eid'];
@@ -48,7 +48,7 @@ Update: The password was stored in the session was updated when password is chan
     $hashed_pwd = sha1($input_pwd);
     //Update the password stored in the session.
     $_SESSION['pwd']=$hashed_pwd;
-    $sql = "UPDATE credential SET nickname='$input_nickname',email='$input_email',address='$input_address',Password='$hashed_pwd',PhoneNumber='$input_phonenumber' where ID=$id;";
+    $sql = "UPDATE credential SET nickname='$input_nickname',email='$input_email',address='$input_address',password='$hashed_pwd',PhoneNumber='$input_phonenumber' where ID=$id;";
   }else{
     // if passowrd field is empty.
     $sql = "UPDATE credential SET nickname='$input_nickname',email='$input_email',address='$input_address',PhoneNumber='$input_phonenumber' where ID=$id;";
