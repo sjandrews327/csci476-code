@@ -1,5 +1,5 @@
 <!--
-SEED Lab: SQL Injection Education Web plateform
+SEED Lab: SQL Injection Education Web platform
 Author: Kailiang Ying
 Email: kying@syr.edu
 -->

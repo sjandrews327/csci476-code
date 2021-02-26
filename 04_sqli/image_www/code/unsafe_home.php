@@ -1,11 +1,11 @@
 <!--
-SEED Lab: SQL Injection Education Web plateform
+SEED Lab: SQL Injection Education Web platform
 Author: Kailiang Ying
 Email: kying@syr.edu
 -->
 
 <!--
-SEED Lab: SQL Injection Education Web plateform
+SEED Lab: SQL Injection Education Web platform
 Enhancement Version 1
 Date: 12th April 2018
 Developer: Kuber Kohli
