@@ -6,6 +6,8 @@ services:
         image: seed-image-www-sqli
         container_name: www-10.9.0.5
         tty: true
+        volumes:
+                - ./image_www/code:/var/www/sql_injection
         networks:
             net-10.9.0.0:
                 ipv4_address: 10.9.0.5
@@ -31,4 +33,3 @@ networks:
         ipam:
             config:
                 - subnet: 10.9.0.0/24
-
