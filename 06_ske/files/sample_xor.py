@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+#
+# XOR strings (ascii strings and hex strings).
+#
+
 # XOR two bytearrays
 def xor(first, second):
    return bytearray(x^y for x,y in zip(first, second))
