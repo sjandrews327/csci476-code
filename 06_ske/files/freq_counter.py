@@ -1,9 +1,9 @@
 #!/usr/bin/python
 
-# quick and dirty python script to count frequencies of i
+# quick and dirty python script to count frequencies of
 # unigrams, bigrams, and trigrams in a corpus of text.
 #
-# Usage: ./freq_counter < mytextfile
+# Usage: ./freq_counter.py < mytextfile
 
 import sys
 import csv
@@ -16,7 +16,7 @@ def write_to_csv(filename, data):
     x, y = zip(*data)
     x = [ ''.join(_) for _ in x]
     y = list(y)
-    data = [x, y] 
+    data = [x, y]
     with open(filename, 'w') as f:
         writer = csv.writer(f)
         writer.writerows(data)
@@ -35,14 +35,14 @@ def ngrams(lst, n):
       break
 
 #
-# print 1grams (unigrams) & bigrams & trigrams 
+# print 1grams (unigrams) & bigrams & trigrams
 #
 
 topN = 10
 content = None
 with sys.stdin as f:
     content = [line.strip() for line in f]
-    content = ' '.join(content)        # build 1 big string 
+    content = ' '.join(content)        # build 1 big string
     content = content.replace(' ', '') # don't count whitespace
 
 print("\nletter frequencies (all):")
