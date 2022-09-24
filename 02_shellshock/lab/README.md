@@ -27,7 +27,8 @@ This lab covers the following topics:
 - Chapter 3 in the [SEED Textbook]({{site.data.settings.textbookseedlink}}).
 - A related [video lecture](https://www.handsonsecurity.net/video.html) (Udemy course) recorded by Kevin Du.
 
-
+---
+---
 ## Environment Setup
 
 This lab uses a new approach that is dependent on docker/containers.
@@ -77,7 +78,7 @@ b1004832e275  hostA-10.9.0.5
 9652715c8e0a  hostC-10.9.0.7
 
 # Attach to the container with an ID that starts with "96"
-$ docksh 96
+$ docksh 96  # YOUR ID WILL BE DIFFERENT
 root@9652715c8e0a:/#
 
 # NOTE: If a docker command requires a container ID, you do not need to type the entire ID string.
@@ -133,26 +134,20 @@ There are two main approaches to access the CGI program running on our web serve
     ```bash
     $ curl http://www.seedlab-shellshock.com/cgi-bin/vul.cgi
     ```
-
-<!-- END Special Section -->
+---
+---
 
 ## Lab Tasks
-{:.titletext}
-This lab has been tested on the pre-built SEED VM (Ubuntu 20.04 VM).
-{:.subtitletext}
 
-<!-- Detailed guidelines on the Shellshock attack can be found in the SEED book, so we will not repeat the guidelines in the lab description. -->
+This lab has been tested on the pre-built SEED VM (Ubuntu 20.04 VM).
+
+
 
 ### Task 1: Experimenting with Bash Functions
 
 The bash program in Ubuntu 20.04 has already been patched, so it is no longer vulnerable to the Shellshock attack.
 
 For the purpose of this lab, we have installed a vulnerable version of bash inside the container (see `/bin/bash_shellshock`).
-<!-- The program can also be found in the `Labsetup` folder (inside `image_www`).  -->
-<!-- Its name is `bash_shellshock`.  -->
-<!-- Throughout this lab, we need to use this version of bash (unless otherwise stated). -->
-<!-- You can run this shell program either in the container or directly on your computer.  -->
-<!-- The container manual is linked to the lab's website. -->
 
 Please design an experiment to verify whether `/bin/bash_shellshock` is vulnerable to the Shellshock attack.
 Conduct the same experiment on the patched version `/bin/bash` and report your observations.
@@ -250,18 +245,9 @@ The attack does not depend on what is in the CGI program, as it targets the bash
 You should launch your attack targeting the CGI script located at the following URL: <http://www.seedlab-shellshock.com/cgi-bin/vul.cgi>.
 _**Your ultimate objective is to get the server to run an arbitrary command of your choosing.**_
 
-In this task, you are required to use three different `curl` options (i.e., three different HTTP header fields) to launch the Shellshock attack against the target CGI program.
-
-Each of the following subtasks (3.1-3.6) explicitly identifies your objective.
-
-For each objective, please report:
-1. A summary of your approach, with relevant command inputs/outputs
-2. The `curl` option you used
-3. The result (i.e., was your attack successful? Why or why not? Other observations?)
-
-Note that for each of the following subtasks you only need to use one of the `curl` options in your attack, but in total, you need to use three different `curl` options.
 
 
+---
 #### CGI Scripts & Returning Plaintext Output
 
 In this lab we target [Common Gateway Interface (CGI) scripts](https://en.wikipedia.org/wiki/Common_Gateway_Interface)
@@ -305,9 +291,7 @@ echo; ls -l
 echo; /bin/ls -l
 ```
 
-</div>
-</div>
-<!-- END Special Section -->
+---
 
 In this task, you are required to use three different `curl` options (i.e., three different HTTP header fields) to launch the Shellshock attack against the target CGI program.
 
@@ -319,25 +303,25 @@ For each objective, please report:
 3. The result (i.e., was your attack successful? Why or why not? Other observations?)
 4. Include a screenshot of your curl request followed by the output in your lab report
 
-#### Task 3.1: Shellshock & Reading A File
+### Task 3.1: Shellshock & Reading A File
 
 Get the server to send back the content of the `/etc/passwd` file.
 
-#### Task 3.2: Shellshock & Process Info
+### Task 3.2: Shellshock & Process Info
 
 Get the server to tell you its process' user ID. You can use the `/bin/id` command to print out the ID information.
 
-#### Task 3.3: Shellshock & Creating A File
+### Task 3.3: Shellshock & Creating A File
 
 Get the server to create a file inside the `/tmp` folder.
 
 You will either need to get into the container to verify whether the file was actually created, or use another Shellshock attack to list the contents of the `/tmp` folder.
 
-#### Task 3.4: Shellshock & Deleting A File
+### Task 3.4: Shellshock & Deleting A File
 
 Get the server to delete the file that you just created inside the `/tmp` folder.
 
-#### Task 3.5: Shellshock & Reading A Privileged File
+### Task 3.5: Shellshock & Reading A Privileged File
 
 (Try) to "steal" the shadow file `/etc/shadow` from the server.
 
